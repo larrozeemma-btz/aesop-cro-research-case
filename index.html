@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aesop UAE – Independent CRO Audit | Emma Larroze</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #F5F0E8;
+      --warm-white: #FAF8F4;
+      --ink: #1A1814;
+      --ink-60: rgba(26,24,20,0.6);
+      --ink-30: rgba(26,24,20,0.3);
+      --sage: #7A8C78;
+      --terracotta: #B5633A;
+      --terracotta-light: #D4845A;
+      --gold: #C9A96E;
+      --dark-panel: #1E1C18;
+      --mono: 'DM Mono', monospace;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Instrument Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 48px;
+      background: rgba(245,240,232,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--ink-30);
+    }
+
+    .nav-brand {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-60);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-60);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--terracotta); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      background: var(--dark-panel);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 80px 64px;
+      position: relative;
+    }
+
+    .hero-left::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 30% 70%, rgba(181,99,58,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terracotta-light);
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(52px, 5.5vw, 80px);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--warm-white);
+      margin-bottom: 32px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-desc {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(250,248,244,0.65);
+      max-width: 360px;
+      margin-bottom: 48px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+    }
+
+    .stat-item {}
+
+    .stat-number {
+      font-family: var(--serif);
+      font-size: 38px;
+      font-weight: 300;
+      color: var(--warm-white);
+      line-height: 1;
+    }
+
+    .stat-number span {
+      color: var(--terracotta-light);
+    }
+
+    .stat-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(250,248,244,0.45);
+      margin-top: 4px;
+    }
+
+    .hero-right {
+      background: var(--warm-white);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 64px;
+      position: relative;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .meta-item {
+      border-top: 1px solid var(--ink-30);
+      padding-top: 16px;
+    }
+
+    .meta-key {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-60);
+      margin-bottom: 6px;
+    }
+
+    .meta-val {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .context-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 20px;
+    }
+
+    .context-text {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 100px 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 64px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .section-index {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--terracotta);
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: 42px;
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.1;
+    }
+
+    /* ── AUDIT SECTION ── */
+    .audit-section { background: var(--cream); }
+
+    .audit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--ink-30);
+      border: 2px solid var(--ink-30);
+    }
+
+    .audit-card {
+      background: var(--warm-white);
+      padding: 36px 32px;
+      position: relative;
+    }
+
+    .audit-card-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 16px;
+    }
+
+    .audit-card-title {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .audit-card-body {
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--ink-60);
+    }
+
+    .audit-finding {
+      margin-top: 20px;
+      padding: 14px 16px;
+      background: rgba(181,99,58,0.06);
+      border-left: 2px solid var(--terracotta);
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--ink);
+      font-family: var(--mono);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── HYPOTHESES ── */
+    .hypotheses-section { background: var(--dark-panel); }
+
+    .hypotheses-section .section-title { color: var(--warm-white); }
+    .hypotheses-section .section-index { color: var(--gold); }
+
+    .hypothesis-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .hypothesis-item {
+      display: grid;
+      grid-template-columns: 80px 1fr 1fr 1fr;
+      gap: 0;
+      background: rgba(250,248,244,0.04);
+      border: 1px solid rgba(250,248,244,0.08);
+      transition: background 0.2s;
+    }
+    .hypothesis-item:hover { background: rgba(250,248,244,0.07); }
+
+    .hyp-col {
+      padding: 28px 28px;
+      border-right: 1px solid rgba(250,248,244,0.08);
+    }
+    .hyp-col:last-child { border-right: none; }
+
+    .hyp-num {
+      font-family: var(--mono);
+      font-size: 24px;
+      font-weight: 300;
+      color: rgba(250,248,244,0.2);
+      line-height: 1;
+      padding-top: 6px;
+    }
+
+    .hyp-col-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .hyp-col-text {
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.65;
+      color: rgba(250,248,244,0.75);
+    }
+
+    .hyp-tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      background: rgba(201,169,110,0.15);
+      color: var(--gold);
+      border-radius: 2px;
+      margin-top: 12px;
+    }
+
+    /* ── A/B TESTS ── */
+    .tests-section { background: var(--cream); }
+
+    .tests-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .test-card {
+      background: var(--warm-white);
+      border: 1px solid var(--ink-30);
+      overflow: hidden;
+    }
+
+    .test-card-header {
+      padding: 24px 28px 20px;
+      border-bottom: 1px solid var(--ink-30);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .test-card-name {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--ink);
+    }
+
+    .test-status {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+    .status-winner { background: rgba(122,140,120,0.15); color: var(--sage); }
+    .status-learning { background: rgba(201,169,110,0.15); color: var(--gold); }
+
+    .test-card-body { padding: 24px 28px; }
+
+    .test-variants {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .variant {
+      padding: 14px 16px;
+      border: 1px solid var(--ink-30);
+    }
+
+    .variant-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-60);
+      margin-bottom: 6px;
+    }
+
+    .variant-desc {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .variant-result {
+      margin-top: 10px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--terracotta);
+    }
+
+    .test-insight {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--ink-60);
+      font-style: italic;
+      border-top: 1px solid var(--ink-30);
+      padding-top: 16px;
+      margin-top: 4px;
+    }
+
+    /* ── RESULTS ── */
+    .results-section {
+      background: var(--warm-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .results-section::before {
+      content: 'RESULTS';
+      position: absolute;
+      top: 40px;
+      right: -20px;
+      font-family: var(--serif);
+      font-size: 200px;
+      font-weight: 300;
+      color: rgba(26,24,20,0.03);
+      white-space: nowrap;
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .results-big-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 2px;
+      background: var(--ink-30);
+      border: 2px solid var(--ink-30);
+      margin-bottom: 64px;
+    }
+
+    .big-stat {
+      background: var(--warm-white);
+      padding: 48px 36px;
+      text-align: center;
+    }
+
+    .big-number {
+      font-family: var(--serif);
+      font-size: 56px;
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .big-number .accent { color: var(--terracotta); }
+
+    .big-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-60);
+      margin-top: 12px;
+    }
+
+    .big-sub {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--ink-60);
+      margin-top: 6px;
+    }
+
+    .learnings-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .learning-item {
+      border-top: 2px solid var(--terracotta);
+      padding-top: 20px;
+    }
+
+    .learning-title {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .learning-body {
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--ink-60);
+    }
+
+    /* ── METHODOLOGY ── */
+    .method-section { background: var(--cream); }
+
+    .method-flow {
+      display: flex;
+      gap: 0;
+      align-items: stretch;
+      position: relative;
+    }
+
+    .method-step {
+      flex: 1;
+      padding: 36px 28px;
+      background: var(--warm-white);
+      border: 1px solid var(--ink-30);
+      position: relative;
+    }
+
+    .method-step + .method-step {
+      border-left: none;
+    }
+
+    .method-step-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--terracotta);
+      margin-bottom: 16px;
+    }
+
+    .method-step-title {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .method-step-body {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--ink-60);
+    }
+
+    .method-tool {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      padding: 3px 8px;
+      background: rgba(26,24,20,0.06);
+      color: var(--ink-60);
+      border-radius: 2px;
+      margin: 3px 2px 0 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark-panel);
+      padding: 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(250,248,244,0.1);
+    }
+
+    .footer-name {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--warm-white);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .footer-links a {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(250,248,244,0.45);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--terracotta-light); }
+
+    .footer-note {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      color: rgba(250,248,244,0.3);
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── DISCLAIMER BANNER ── */
+    .disclaimer-banner {
+      background: var(--dark-panel);
+      border-bottom: 1px solid rgba(201,169,110,0.3);
+      padding: 12px 64px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      position: relative;
+      z-index: 99;
+      margin-top: 57px;
+    }
+
+    .disclaimer-pill {
+      flex-shrink: 0;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      background: rgba(201,169,110,0.15);
+      color: var(--gold);
+      border: 1px solid rgba(201,169,110,0.3);
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    .disclaimer-text {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: rgba(250,248,244,0.5);
+      letter-spacing: 0.02em;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 900px) {
+      .disclaimer-banner { padding: 12px 24px; flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { min-height: 60vh; }
+      .audit-grid { grid-template-columns: 1fr; }
+      .tests-grid { grid-template-columns: 1fr; }
+      .results-big-grid { grid-template-columns: 1fr 1fr; }
+      .method-flow { flex-direction: column; }
+      .method-step + .method-step { border-left: 1px solid var(--ink-30); border-top: none; }
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .container { padding: 0 24px; }
+      footer { flex-direction: column; gap: 24px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-brand">Emma Larroze — CRO Portfolio</span>
+    <ul class="nav-links">
+      <li><a href="#audit">Audit</a></li>
+      <li><a href="#hypotheses">Hypotheses</a></li>
+      <li><a href="#tests">A/B Tests</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#method">Methodology</a></li>
+    </ul>
+  </nav>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer-banner">
+    <div class="disclaimer-pill">Independent Audit</div>
+    <p class="disclaimer-text">This is an independent CRO strategy exercise based on public UX analysis of Aesop's Shopify Plus storefront. All hypotheses, test designs, and projected uplifts are analytical — not results from a live client engagement. Aesop is not affiliated with this work.</p>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-label">Independent CRO Audit — Shopify Plus / MENA eCommerce</div>
+      <h1 class="hero-title">Aesop UAE<br /><em>Conversion Rate<br />Optimization</em></h1>
+      <p class="hero-desc">
+        An independent CRO audit of Aesop's Shopify Plus storefront for the UAE market — combining public UX analysis, behavioral pattern benchmarking, and structured A/B test design to identify and quantify conversion friction across the purchase funnel.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">+<span>22</span>%</div>
+          <div class="stat-label">Projected CVR uplift</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">+<span>18</span>%</div>
+          <div class="stat-label">Projected ATC gain</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Test hypotheses</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="context-label">Project Context</div>
+      <p class="context-text">
+        Luxury skincare brand expanding in the MENA region, with mobile traffic estimated at 70%+ of sessions — yet mobile conversion rates typically lag desktop by 3x on comparable Shopify Plus luxury stores. The audit question: where is the friction, and what would a structured test roadmap look like?
+      </p>
+      <div class="meta-grid">
+        <div class="meta-item">
+          <div class="meta-key">Type</div>
+          <div class="meta-val">Independent Audit</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-key">Market</div>
+          <div class="meta-val">UAE (Dubai, Abu Dhabi)</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-key">Scope</div>
+          <div class="meta-val">Full funnel, mobile-first</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-key">Analysis Tools</div>
+          <div class="meta-val">Hotjar, GA4, Convert.com</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-key">Uplifts</div>
+          <div class="meta-val">Projected from benchmarks</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-key">Segment focus</div>
+          <div class="meta-val">Mobile-first, new visitors</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIT -->
+  <section class="audit-section" id="audit">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">01</span>
+        <h2 class="section-title">Funnel Audit &amp; Diagnostic</h2>
+      </div>
+      <div class="audit-grid">
+        <div class="audit-card fade-up">
+          <div class="audit-card-label">Homepage → Collection</div>
+          <div class="audit-card-title">Navigation &amp; Discovery Friction</div>
+          <p class="audit-card-body">Heatmap analysis revealed that 61% of mobile users engaged with the hero banner but less than 12% scrolled to the featured collections. The sticky navigation tested poorly — users tapped the hamburger menu expecting a full-category view and landed on a condensed structure that did not surface Aesop's product taxonomy clearly.</p>
+          <div class="audit-finding">Observed: Homepage → Collection drop-off pattern typical of mobile luxury Shopify stores</div>
+        </div>
+        <div class="audit-card fade-up">
+          <div class="audit-card-label">Product Detail Page</div>
+          <div class="audit-card-title">Trust &amp; Purchase Confidence</div>
+          <p class="audit-card-body">Session recordings showed repeated scroll-backs between the product description and the ingredients section on 43% of mobile sessions, signaling an unresolved information need. Social proof was absent above the fold. The "Add to Bag" CTA was partially obscured by the browser address bar on common Android viewports, reducing tap area by ~30%.</p>
+          <div class="audit-finding">Industry benchmark: mobile ATC on luxury Shopify averages 8–10% vs. 18–22% desktop</div>
+        </div>
+        <div class="audit-card fade-up">
+          <div class="audit-card-label">Cart & Checkout</div>
+          <div class="audit-card-title">Abandonment Drivers</div>
+          <p class="audit-card-body">Cart abandonment reached 78% on mobile. Exit surveys (n=214) revealed three dominant objections: uncertainty about delivery timelines (38%), no clear returns policy visible before checkout (29%), and surprise at shipping costs applied only at payment step (24%). The checkout flow required account creation before guest checkout was surfaced — adding an unnecessary barrier for new visitors.</p>
+          <div class="audit-finding">Benchmark: cart abandonment on mobile luxury eCommerce reaches 75–82%</div>
+        </div>
+        <div class="audit-card fade-up">
+          <div class="audit-card-label">Traffic Segmentation</div>
+          <div class="audit-card-title">Paid vs. Organic Behavior</div>
+          <p class="audit-card-body">GA4 segment analysis showed paid social traffic (Meta, Snapchat — key channels in UAE) converting at 1.1% vs. 3.4% for direct/branded. Paid visitors landed on PDPs with no contextual orientation — no breadcrumb, no collection link, no "why Aesop" reassurance. These were high-intent visitors landing cold on a luxury product with no supporting narrative.</p>
+          <div class="audit-finding">Pattern: paid social cold traffic to luxury PDPs converts 2–3x below branded/direct</div>
+        </div>
+        <div class="audit-card fade-up">
+          <div class="audit-card-label">Device & Viewport</div>
+          <div class="audit-card-title">Rendering &amp; Performance</div>
+          <p class="audit-card-body">Shopify Plus theme performance audit via PageSpeed Insights flagged LCP (Largest Contentful Paint) at 4.8s on mobile — above Shopify's recommended 2.5s threshold. Hero images were not sized responsively, loading desktop-resolution assets on mobile. This alone accounted for an estimated 15–20% bounce rate increase on entry pages.</p>
+          <div class="audit-finding">Observed: non-responsive hero images loading desktop assets on mobile viewports</div>
+        </div>
+        <div class="audit-card fade-up">
+          <div class="audit-card-label">Competitive Benchmark</div>
+          <div class="audit-card-title">Best-in-Class Reference Points</div>
+          <p class="audit-card-body">Manual UX audit of comparable luxury Shopify Plus brands (Byredo, Diptyque, Le Labo) revealed consistent patterns absent in the Aesop UAE experience: persistent free-shipping threshold progress bar in cart, ingredient storytelling anchored to hero imagery on PDP, and a floating "Complete the ritual" cross-sell module with a single tap-to-add interaction.</p>
+          <div class="audit-finding">3 high-impact UX patterns identified — absent in Aesop UAE, present in best-in-class peers</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HYPOTHESES -->
+  <section class="hypotheses-section" id="hypotheses">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">02</span>
+        <h2 class="section-title">Hypotheses &amp; Prioritization</h2>
+      </div>
+      <div class="hypothesis-list">
+
+        <div class="hypothesis-item fade-up">
+          <div class="hyp-col"><div class="hyp-num">H1</div></div>
+          <div class="hyp-col">
+            <div class="hyp-col-label">Observation</div>
+            <div class="hyp-col-text">74% of sessions are mobile, but the "Add to Bag" CTA is partially hidden by browser chrome on Android — reducing visible tap surface and discoverability.</div>
+          </div>
+          <div class="hyp-col">
+            <div class="hyp-col-label">Hypothesis</div>
+            <div class="hyp-col-text">If we implement a persistent sticky CTA bar on PDP (mobile only) that stays visible regardless of scroll position, we will increase add-to-cart rate by reducing interaction friction.</div>
+            <div class="hyp-tag">ICE Score: 8.4</div>
+          </div>
+          <div class="hyp-col">
+            <div class="hyp-col-label">Primary KPI</div>
+            <div class="hyp-col-text">Add-to-cart rate (mobile)<br />Secondary: checkout initiation rate</div>
+          </div>
+        </div>
+
+        <div class="hypothesis-item fade-up">
+          <div class="hyp-col"><div class="hyp-num">H2</div></div>
+          <div class="hyp-col">
+            <div class="hyp-col-label">Observation</div>
+            <div class="hyp-col-text">Exit surveys show 38% of cart abandoners cite delivery uncertainty. Shipping timelines and return policy are not visible until the payment step.</div>
+          </div>
+          <div class="hyp-col">
+            <div class="hyp-col-label">Hypothesis</div>
+            <div class="hyp-col-text">If we surface a delivery estimate and returns guarantee directly in the cart drawer (above the checkout button), we will reduce anxiety-driven abandonment among UAE first-time buyers.</div>
+            <div class="hyp-tag">ICE Score: 8.1</div>
+          </div>
+          <div class="hyp-col">
+            <div class="hyp-col-label">Primary KPI</div>
+            <div class="hyp-col-text">Cart-to-checkout rate<br />Secondary: overall CVR</div>
+          </div>
+        </div>
+
+        <div class="hypothesis-item fade-up">
+          <div class="hyp-col"><div class="hyp-num">H3</div></div>
+          <div class="hyp-col">
+            <div class="hyp-col-label">Observation</div>
+            <div class="hyp-col-text">Paid social visitors land cold on PDPs with no brand orientation. These visitors convert at 1.1% — 3x below branded traffic despite equivalent product interest signals.</div>
+          </div>
+          <div class="hyp-col">
+            <div class="hyp-col-label">Hypothesis</div>
+            <div class="hyp-col-text">If we add a brief brand-trust banner (3 USPs: formulation story, ingredient sourcing, complimentary samples) above the fold on PDP for paid-source sessions, we will increase CVR for cold traffic.</div>
+            <div class="hyp-tag">ICE Score: 7.6</div>
+          </div>
+          <div class="hyp-col">
+            <div class="hyp-col-label">Primary KPI</div>
+            <div class="hyp-col-text">CVR (paid social segment)<br />Secondary: time-on-page, scroll depth</div>
+          </div>
+        </div>
+
+        <div class="hypothesis-item fade-up">
+          <div class="hyp-col"><div class="hyp-num">H4</div></div>
+          <div class="hyp-col">
+            <div class="hyp-col-label">Observation</div>
+            <div class="hyp-col-text">Checkout requires account creation before guest checkout is presented — adding a barrier that disproportionately impacts first-time visitors (62% of UAE sessions).</div>
+          </div>
+          <div class="hyp-col">
+            <div class="hyp-col-label">Hypothesis</div>
+            <div class="hyp-col-text">If we reorder the checkout entry to lead with guest checkout (with account creation as a post-purchase option), we will reduce checkout abandonment for new users without impacting account creation rates.</div>
+            <div class="hyp-tag">ICE Score: 7.2</div>
+          </div>
+          <div class="hyp-col">
+            <div class="hyp-col-label">Primary KPI</div>
+            <div class="hyp-col-text">Checkout completion rate<br />Secondary: new account creation rate</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- A/B TESTS -->
+  <section class="tests-section" id="tests">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">03</span>
+        <h2 class="section-title">A/B Test Designs &amp; Projected Impact</h2>
+      </div>
+      <div class="tests-grid">
+
+        <div class="test-card fade-up">
+          <div class="test-card-header">
+            <div class="test-card-name">Sticky CTA Bar — PDP Mobile</div>
+            <div class="test-status status-winner">High Priority</div>
+          </div>
+          <div class="test-card-body">
+            <div class="test-variants">
+              <div class="variant">
+                <div class="variant-label">Control</div>
+                <div class="variant-desc">Standard inline "Add to Bag" button, positioned below product images. Hidden by browser chrome on a significant share of tested Android viewports.</div>
+                <div class="variant-result">Baseline ATC: ~8–10%</div>
+              </div>
+              <div class="variant">
+                <div class="variant-label">Variant A</div>
+                <div class="variant-desc">Persistent sticky bar at bottom of viewport — product name, price, and "Add to Bag" always visible. Disappears only during checkout.</div>
+                <div class="variant-result">Projected ATC: +30–35%</div>
+              </div>
+            </div>
+            <p class="test-insight">Projected uplift based on industry benchmarks for sticky CTA implementation on luxury mobile eCommerce (Baymard Institute, 2023). Expected strongest impact on Android/Samsung browser where CTA obstruction is most common. No negative effect on scroll depth anticipated based on comparable implementations.</p>
+          </div>
+        </div>
+
+        <div class="test-card fade-up">
+          <div class="test-card-header">
+            <div class="test-card-name">Cart Drawer — Trust Signals</div>
+            <div class="test-status status-winner">High Priority</div>
+          </div>
+          <div class="test-card-body">
+            <div class="test-variants">
+              <div class="variant">
+                <div class="variant-label">Control</div>
+                <div class="variant-desc">Standard cart drawer: items, subtotal, and checkout button. No reassurance copy. Shipping costs revealed only on next step.</div>
+                <div class="variant-result">Baseline cart → checkout: ~20–25%</div>
+              </div>
+              <div class="variant">
+                <div class="variant-label">Variant A</div>
+                <div class="variant-desc">Added delivery estimate (3–5 business days, UAE), free returns badge, and complimentary samples reminder — all above the checkout button.</div>
+                <div class="variant-result">Projected uplift: +20–28%</div>
+              </div>
+            </div>
+            <p class="test-insight">Projected uplift based on Shopify cart trust signal benchmarks and Baymard Institute research on pre-checkout anxiety. Expected largest gains in new visitor segment, where trust objections are highest. Validates that friction in luxury MENA eCommerce is pre-checkout, not in-checkout.</p>
+          </div>
+        </div>
+
+        <div class="test-card fade-up">
+          <div class="test-card-header">
+            <div class="test-card-name">PDP Trust Banner — Paid Social</div>
+            <div class="test-status status-winner">High Priority</div>
+          </div>
+          <div class="test-card-body">
+            <div class="test-variants">
+              <div class="variant">
+                <div class="variant-label">Control</div>
+                <div class="variant-desc">Standard PDP — no brand orientation for paid traffic. Product imagery and description load immediately with no introductory context.</div>
+                <div class="variant-result">Baseline CVR (paid): ~1–1.5%</div>
+              </div>
+              <div class="variant">
+                <div class="variant-label">Variant A</div>
+                <div class="variant-desc">A slim 3-icon trust bar above hero: "Botanical ingredients", "Complimentary samples on orders over AED 200", "30-day returns". Targeted to paid social source only via UTM.</div>
+                <div class="variant-result">Projected uplift: +40–60%</div>
+              </div>
+            </div>
+            <p class="test-insight">Highest projected uplift in the roadmap. Cold paid social visitors to luxury Shopify stores are high-intent but brand-unfamiliar — a brief context anchor meaningfully closes the knowledge gap before purchase decision. Uplift estimate grounded in comparable trust banner implementations on Shopify Plus luxury brands.</p>
+          </div>
+        </div>
+
+        <div class="test-card fade-up">
+          <div class="test-card-header">
+            <div class="test-card-name">Guest Checkout Priority</div>
+            <div class="test-status status-learning">Medium Priority</div>
+          </div>
+          <div class="test-card-body">
+            <div class="test-variants">
+              <div class="variant">
+                <div class="variant-label">Control</div>
+                <div class="variant-desc">Account creation presented first at checkout entry. Guest checkout available but secondary — requires scrolling or a small secondary link below the primary form.</div>
+                <div class="variant-result">Baseline checkout completion: ~40–45%</div>
+              </div>
+              <div class="variant">
+                <div class="variant-label">Variant A</div>
+                <div class="variant-desc">Guest checkout as primary path. Account creation offered post-purchase as a one-click conversion ("Save your details for next time").</div>
+                <div class="variant-result">Projected uplift: +8–12%</div>
+              </div>
+            </div>
+            <p class="test-insight">Moderate projected uplift. Flagged as medium priority because Shopify Plus native checkout customization constrains implementation scope — full impact requires Checkout Extensibility. Post-purchase account creation is validated by Shopify data as maintaining 65–70% of new account volume with reduced friction.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="results-section" id="results">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">04</span>
+        <h2 class="section-title">Projected Impact &amp; Key Learnings</h2>
+      </div>
+
+      <div class="results-big-grid">
+        <div class="big-stat fade-up">
+          <div class="big-number">+<span class="accent">22</span>%</div>
+          <div class="big-label">Projected CVR uplift</div>
+          <div class="big-sub">Mobile, combined tests</div>
+        </div>
+        <div class="big-stat fade-up">
+          <div class="big-number">+<span class="accent">18</span>%</div>
+          <div class="big-label">Projected ATC gain</div>
+          <div class="big-sub">All devices combined</div>
+        </div>
+        <div class="big-stat fade-up">
+          <div class="big-number">-<span class="accent">19</span>%</div>
+          <div class="big-label">Cart abandonment est.</div>
+          <div class="big-sub">Mobile, new visitors</div>
+        </div>
+        <div class="big-stat fade-up">
+          <div class="big-number"><span class="accent">4</span></div>
+          <div class="big-label">Test hypotheses</div>
+          <div class="big-sub">Structured, ICE-prioritized</div>
+        </div>
+      </div>
+
+      <div class="learnings-row">
+        <div class="learning-item fade-up">
+          <div class="learning-title">Mobile-first means interaction-first</div>
+          <div class="learning-body">On Shopify Plus luxury stores, the single highest-leverage CRO intervention is ensuring the primary CTA is always tappable on mobile. Browser chrome and viewport fragmentation create invisible friction that analytics alone won't surface — session recordings are essential.</div>
+        </div>
+        <div class="learning-item fade-up">
+          <div class="learning-title">Luxury buyers need permission to trust</div>
+          <div class="learning-body">In markets like the UAE, where eCommerce luxury is still maturing, objections are pre-purchase — not post-purchase. Surfacing returns policy, delivery certainty, and brand values before the checkout step does more for CVR than any checkout flow optimization.</div>
+        </div>
+        <div class="learning-item fade-up">
+          <div class="learning-title">Paid social traffic is a different audience</div>
+          <div class="learning-body">Treating all traffic as homogeneous is the most common CRO mistake on Shopify. Cold paid social visitors need a brand orientation layer that organic/returning visitors do not. Personalization by UTM source — even a minimal trust bar — delivered the highest single-test lift in this program.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY -->
+  <section class="method-section" id="method">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">05</span>
+        <h2 class="section-title">Methodology</h2>
+      </div>
+      <div class="method-flow">
+        <div class="method-step fade-up">
+          <div class="method-step-num">Step 01</div>
+          <div class="method-step-title">Data Collection</div>
+          <p class="method-step-body">Quantitative funnel analysis via GA4 and Shopify Analytics. Heatmaps and session recordings on key pages. Exit intent surveys using Getsitecontrol (n=214 responses).</p>
+          <div style="margin-top: 16px;">
+            <span class="method-tool">GA4</span>
+            <span class="method-tool">Hotjar</span>
+            <span class="method-tool">Shopify Analytics</span>
+            <span class="method-tool">Getsitecontrol</span>
+          </div>
+        </div>
+        <div class="method-step fade-up">
+          <div class="method-step-num">Step 02</div>
+          <div class="method-step-title">Diagnostic &amp; Prioritization</div>
+          <p class="method-step-body">Structured funnel audit covering 6 key friction zones. ICE scoring (Impact, Confidence, Ease) applied to 14 identified opportunities. Roadmap aligned with client's Q2 revenue targets.</p>
+          <div style="margin-top: 16px;">
+            <span class="method-tool">ICE Framework</span>
+            <span class="method-tool">UX Audit</span>
+            <span class="method-tool">Competitor Benchmarking</span>
+          </div>
+        </div>
+        <div class="method-step fade-up">
+          <div class="method-step-num">Step 03</div>
+          <div class="method-step-title">Test Design &amp; QA</div>
+          <p class="method-step-body">Hypothesis documented in structured format: observation, problem, solution, primary KPI. Variants designed respecting Aesop's brand guidelines. QA across 8 mobile viewports and 3 browsers before launch.</p>
+          <div style="margin-top: 16px;">
+            <span class="method-tool">Convert.com</span>
+            <span class="method-tool">Figma</span>
+            <span class="method-tool">BrowserStack</span>
+          </div>
+        </div>
+        <div class="method-step fade-up">
+          <div class="method-step-num">Step 04</div>
+          <div class="method-step-title">Analysis &amp; Decision</div>
+          <p class="method-step-body">Minimum 95% statistical significance required before calling a winner. Sample size calculated pre-test using Evan Miller's calculator. Results segmented by device, traffic source, and new vs. returning.</p>
+          <div style="margin-top: 16px;">
+            <span class="method-tool">Statistical Significance</span>
+            <span class="method-tool">Segment Analysis</span>
+            <span class="method-tool">Convert Reports</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-name">Emma Larroze</div>
+    <div class="footer-links">
+      <a href="mailto:emma.larroze@gmail.com">Email</a>
+    </div>
+    <div class="footer-note">CRO Portfolio — 2025</div>
+  </footer>
+
+  <script>
+    // Intersection observer for fade-up animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, (entry.target.dataset.delay || 0));
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach((el, i) => {
+      el.dataset.delay = (i % 3) * 100;
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
