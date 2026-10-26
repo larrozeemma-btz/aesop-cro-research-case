@@ -717,7 +717,7 @@
       <li><a href="#audit">Audit</a></li>
       <li><a href="#hypotheses">Hypotheses</a></li>
       <li><a href="#tests">A/B Tests</a></li>
-      <li><a href="#results">Results</a></li>
+      <li><a href="#results">Impact</a></li>
       <li><a href="#method">Methodology</a></li>
     </ul>
   </nav>
@@ -746,7 +746,7 @@
           <div class="stat-label">Projected ATC gain</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">6</div>
+          <div class="stat-number">4</div>
           <div class="stat-label">Test hypotheses</div>
         </div>
       </div>
@@ -771,8 +771,8 @@
           <div class="meta-val">Full funnel, mobile-first</div>
         </div>
         <div class="meta-item">
-          <div class="meta-key">Analysis Tools</div>
-          <div class="meta-val">Hotjar, GA4, Convert.com</div>
+          <div class="meta-key">Inputs</div>
+          <div class="meta-val">Public UX audit, PageSpeed Insights, benchmarks</div>
         </div>
         <div class="meta-item">
           <div class="meta-key">Uplifts</div>
@@ -797,31 +797,31 @@
         <div class="audit-card fade-up">
           <div class="audit-card-label">Homepage → Collection</div>
           <div class="audit-card-title">Navigation &amp; Discovery Friction</div>
-          <p class="audit-card-body">Heatmap analysis revealed that 61% of mobile users engaged with the hero banner but less than 12% scrolled to the featured collections. The sticky navigation tested poorly: users tapped the hamburger menu expecting a full-category view and landed on a condensed structure that did not surface Aesop's product taxonomy clearly.</p>
-          <div class="audit-finding">Observed: Homepage → Collection drop-off pattern typical of mobile luxury Shopify stores</div>
+          <p class="audit-card-body">On mobile, the hero banner fills the first screen and the featured collections sit well below the fold, a layout where benchmark heatmaps for luxury stores typically show most visitors never scrolling that far. The hamburger menu opens a condensed structure that does not surface Aesop's product taxonomy clearly, so a shopper looking for a full-category view has no direct path to it.</p>
+          <div class="audit-finding">Benchmark: homepage-to-collection drop-off is typical of mobile luxury Shopify stores</div>
         </div>
         <div class="audit-card fade-up">
           <div class="audit-card-label">Product Detail Page</div>
           <div class="audit-card-title">Trust &amp; Purchase Confidence</div>
-          <p class="audit-card-body">Session recordings showed repeated scroll-backs between the product description and the ingredients section on 43% of mobile sessions, signaling an unresolved information need. Social proof was absent above the fold. The "Add to Bag" CTA was partially obscured by the browser address bar on common Android viewports, reducing tap area by ~30%.</p>
+          <p class="audit-card-body">The ingredients section sits far below the product description, so a shopper comparing the two has to scroll back and forth, a classic sign of an unresolved information need that session recordings would confirm. Social proof was absent above the fold. On common Android viewports, the browser address bar partially covered the "Add to Bag" CTA, cutting its visible tap area by an estimated ~30%.</p>
           <div class="audit-finding">Industry benchmark: mobile ATC on luxury Shopify averages 8–10% vs. 18–22% desktop</div>
         </div>
         <div class="audit-card fade-up">
           <div class="audit-card-label">Cart & Checkout</div>
           <div class="audit-card-title">Abandonment Drivers</div>
-          <p class="audit-card-body">Cart abandonment reached 78% on mobile. Exit surveys (n=214) revealed three dominant objections: uncertainty about delivery timelines (38%), no clear returns policy visible before checkout (29%), and surprise at shipping costs applied only at payment step (24%). The checkout flow required account creation before guest checkout was surfaced, which added an unnecessary barrier for new visitors.</p>
+          <p class="audit-card-body">A walkthrough of the cart and checkout surfaced three likely abandonment drivers: no delivery timeline before checkout, no returns policy visible before checkout, and shipping costs that appear only at the payment step. Unexpected extra costs and delivery uncertainty rank among the top reasons shoppers abandon in Baymard Institute's checkout research. The checkout flow also leads with account creation before guest checkout is surfaced, an unnecessary barrier for new visitors.</p>
           <div class="audit-finding">Benchmark: cart abandonment on mobile luxury eCommerce reaches 75–82%</div>
         </div>
         <div class="audit-card fade-up">
           <div class="audit-card-label">Traffic Segmentation</div>
           <div class="audit-card-title">Paid vs. Organic Behavior</div>
-          <p class="audit-card-body">GA4 segment analysis showed paid social traffic (Meta and Snapchat, key channels in UAE) converting at 1.1% vs. 3.4% for direct/branded. Paid visitors landed on PDPs with no contextual orientation: no breadcrumb, no collection link, no "why Aesop" reassurance. These were high-intent visitors landing cold on a luxury product with no supporting narrative.</p>
+          <p class="audit-card-body">Paid social (Meta and Snapchat) is a key acquisition channel in the UAE, and campaigns typically send visitors straight to a PDP. Aesop UAE's PDPs offer no contextual orientation for that visitor: no breadcrumb, no collection link, no "why Aesop" reassurance. High-intent visitors land cold on a luxury product with no supporting narrative.</p>
           <div class="audit-finding">Pattern: paid social cold traffic to luxury PDPs converts 2–3x below branded/direct</div>
         </div>
         <div class="audit-card fade-up">
           <div class="audit-card-label">Device & Viewport</div>
           <div class="audit-card-title">Rendering &amp; Performance</div>
-          <p class="audit-card-body">Shopify Plus theme performance audit via PageSpeed Insights flagged LCP (Largest Contentful Paint) at 4.8s on mobile, above Shopify's recommended 2.5s threshold. Hero images were not sized responsively, loading desktop-resolution assets on mobile. This alone accounted for an estimated 15–20% bounce rate increase on entry pages.</p>
+          <p class="audit-card-body">Shopify Plus theme performance audit via PageSpeed Insights flagged LCP (Largest Contentful Paint) at 4.8s on mobile, above Shopify's recommended 2.5s threshold. Hero images were not sized responsively, loading desktop-resolution assets on mobile. Google's mobile research links slower loads to sharply higher bounce: bounce probability rises 32% as load time goes from 1 to 3 seconds.</p>
           <div class="audit-finding">Observed: non-responsive hero images loading desktop assets on mobile viewports</div>
         </div>
         <div class="audit-card fade-up">
@@ -847,7 +847,7 @@
           <div class="hyp-col"><div class="hyp-num">H1</div></div>
           <div class="hyp-col">
             <div class="hyp-col-label">Observation</div>
-            <div class="hyp-col-text">74% of sessions are mobile, but the "Add to Bag" CTA is partially hidden by browser chrome on Android, reducing visible tap surface and discoverability.</div>
+            <div class="hyp-col-text">With an estimated 70%+ of sessions on mobile, the "Add to Bag" CTA is partially hidden by browser chrome on Android, reducing visible tap surface and discoverability.</div>
           </div>
           <div class="hyp-col">
             <div class="hyp-col-label">Hypothesis</div>
@@ -864,7 +864,7 @@
           <div class="hyp-col"><div class="hyp-num">H2</div></div>
           <div class="hyp-col">
             <div class="hyp-col-label">Observation</div>
-            <div class="hyp-col-text">Exit surveys show 38% of cart abandoners cite delivery uncertainty. Shipping timelines and return policy are not visible until the payment step.</div>
+            <div class="hyp-col-text">Shipping timelines and the returns policy are not visible until the payment step, and delivery uncertainty is a leading abandonment driver in Baymard Institute's checkout research.</div>
           </div>
           <div class="hyp-col">
             <div class="hyp-col-label">Hypothesis</div>
@@ -881,7 +881,7 @@
           <div class="hyp-col"><div class="hyp-num">H3</div></div>
           <div class="hyp-col">
             <div class="hyp-col-label">Observation</div>
-            <div class="hyp-col-text">Paid social visitors land cold on PDPs with no brand orientation. These visitors convert at 1.1%, 3x below branded traffic despite equivalent product interest signals.</div>
+            <div class="hyp-col-text">Paid social visitors land cold on PDPs with no brand orientation. Benchmarks show cold paid social traffic to luxury PDPs converting 2 to 3x below branded and direct traffic.</div>
           </div>
           <div class="hyp-col">
             <div class="hyp-col-label">Hypothesis</div>
@@ -898,7 +898,7 @@
           <div class="hyp-col"><div class="hyp-num">H4</div></div>
           <div class="hyp-col">
             <div class="hyp-col-label">Observation</div>
-            <div class="hyp-col-text">Checkout requires account creation before guest checkout is presented, adding a barrier that disproportionately impacts first-time visitors (62% of UAE sessions).</div>
+            <div class="hyp-col-text">Checkout requires account creation before guest checkout is presented, adding a barrier that disproportionately impacts first-time visitors, a large share of traffic for a brand still growing in the UAE.</div>
           </div>
           <div class="hyp-col">
             <div class="hyp-col-label">Hypothesis</div>
@@ -933,7 +933,7 @@
             <div class="test-variants">
               <div class="variant">
                 <div class="variant-label">Control</div>
-                <div class="variant-desc">Standard inline "Add to Bag" button, positioned below product images. Hidden by browser chrome on a significant share of tested Android viewports.</div>
+                <div class="variant-desc">Standard inline "Add to Bag" button, positioned below product images. Hidden by browser chrome on a significant share of the Android viewports checked.</div>
                 <div class="variant-result">Baseline ATC: ~8–10%</div>
               </div>
               <div class="variant">
@@ -964,7 +964,7 @@
                 <div class="variant-result">Projected uplift: +20–28%</div>
               </div>
             </div>
-            <p class="test-insight">Projected uplift based on Shopify cart trust signal benchmarks and Baymard Institute research on pre-checkout anxiety. Expected largest gains in new visitor segment, where trust objections are highest. Validates that friction in luxury MENA eCommerce is pre-checkout, not in-checkout.</p>
+            <p class="test-insight">Projected uplift based on Shopify cart trust signal benchmarks and Baymard Institute research on pre-checkout anxiety. Expected largest gains in new visitor segment, where trust objections are highest. The test would show whether friction in luxury MENA eCommerce sits before checkout rather than inside it.</p>
           </div>
         </div>
 
@@ -1008,7 +1008,7 @@
                 <div class="variant-result">Projected uplift: +8–12%</div>
               </div>
             </div>
-            <p class="test-insight">Moderate projected uplift. Flagged as medium priority because Shopify Plus native checkout customization constrains implementation scope; full impact requires Checkout Extensibility. Post-purchase account creation is validated by Shopify data as maintaining 65–70% of new account volume with reduced friction.</p>
+            <p class="test-insight">Moderate projected uplift. Flagged as medium priority because Shopify Plus native checkout customization constrains implementation scope; full impact requires Checkout Extensibility. Offering account creation after purchase follows Baymard Institute's checkout guidance and keeps the sign-up opportunity without blocking first-time buyers.</p>
           </div>
         </div>
 
@@ -1054,11 +1054,11 @@
         </div>
         <div class="learning-item fade-up">
           <div class="learning-title">Luxury buyers need permission to trust</div>
-          <div class="learning-body">In markets like the UAE, where eCommerce luxury is still maturing, objections are pre-purchase, not post-purchase. Surfacing returns policy, delivery certainty, and brand values before the checkout step does more for CVR than any checkout flow optimization.</div>
+          <div class="learning-body">In markets like the UAE, where eCommerce luxury is still maturing, objections are pre-purchase, not post-purchase. Surfacing returns policy, delivery certainty, and brand values before the checkout step is likely to do more for CVR than checkout flow tweaks.</div>
         </div>
         <div class="learning-item fade-up">
           <div class="learning-title">Paid social traffic is a different audience</div>
-          <div class="learning-body">Treating all traffic as homogeneous is the most common CRO mistake on Shopify. Cold paid social visitors need a brand orientation layer that organic/returning visitors do not. Personalization by UTM source, even a minimal trust bar, delivered the highest single-test lift in this program.</div>
+          <div class="learning-body">Treating all traffic as homogeneous is the most common CRO mistake on Shopify. Cold paid social visitors need a brand orientation layer that organic/returning visitors do not. Personalization by UTM source, even a minimal trust bar, carries the highest projected lift in this roadmap.</div>
         </div>
       </div>
     </div>
@@ -1075,18 +1075,18 @@
         <div class="method-step fade-up">
           <div class="method-step-num">Step 01</div>
           <div class="method-step-title">Data Collection</div>
-          <p class="method-step-body">Quantitative funnel analysis via GA4 and Shopify Analytics. Heatmaps and session recordings on key pages. Exit intent surveys using Getsitecontrol (n=214 responses).</p>
+          <p class="method-step-body">Public UX walkthrough of the full funnel on mobile and desktop, browser chrome checks across common Android and iOS viewports, PageSpeed Insights performance audit, and benchmark data from Baymard Institute and comparable Shopify Plus luxury stores.</p>
           <div style="margin-top: 16px;">
-            <span class="method-tool">GA4</span>
-            <span class="method-tool">Hotjar</span>
-            <span class="method-tool">Shopify Analytics</span>
-            <span class="method-tool">Getsitecontrol</span>
+            <span class="method-tool">UX Audit</span>
+            <span class="method-tool">PageSpeed Insights</span>
+            <span class="method-tool">Baymard Institute</span>
+            <span class="method-tool">Viewport Testing</span>
           </div>
         </div>
         <div class="method-step fade-up">
           <div class="method-step-num">Step 02</div>
           <div class="method-step-title">Diagnostic &amp; Prioritization</div>
-          <p class="method-step-body">Structured funnel audit covering 6 key friction zones. ICE scoring (Impact, Confidence, Ease) applied to 14 identified opportunities. Roadmap aligned with client's Q2 revenue targets.</p>
+          <p class="method-step-body">Structured funnel audit covering 6 key friction zones. ICE scoring (Impact, Confidence, Ease) applied to 14 identified opportunities. Roadmap sequenced mobile-first and new-visitor-first.</p>
           <div style="margin-top: 16px;">
             <span class="method-tool">ICE Framework</span>
             <span class="method-tool">UX Audit</span>
@@ -1096,7 +1096,7 @@
         <div class="method-step fade-up">
           <div class="method-step-num">Step 03</div>
           <div class="method-step-title">Test Design &amp; QA</div>
-          <p class="method-step-body">Hypothesis documented in structured format: observation, problem, solution, primary KPI. Variants designed respecting Aesop's brand guidelines. QA across 8 mobile viewports and 3 browsers before launch.</p>
+          <p class="method-step-body">Hypothesis documented in structured format: observation, problem, solution, primary KPI. Variants designed to respect Aesop's brand codes. QA plan: 8 mobile viewports and 3 browsers before launch.</p>
           <div style="margin-top: 16px;">
             <span class="method-tool">Convert.com</span>
             <span class="method-tool">Figma</span>
@@ -1106,7 +1106,7 @@
         <div class="method-step fade-up">
           <div class="method-step-num">Step 04</div>
           <div class="method-step-title">Analysis &amp; Decision</div>
-          <p class="method-step-body">Minimum 95% statistical significance required before calling a winner. Sample size calculated pre-test using Evan Miller's calculator. Results segmented by device, traffic source, and new vs. returning.</p>
+          <p class="method-step-body">Planned decision rules: minimum 95% statistical significance before calling a winner, sample size calculated pre-test using Evan Miller's calculator, and results segmented by device, traffic source, and new vs. returning.</p>
           <div style="margin-top: 16px;">
             <span class="method-tool">Statistical Significance</span>
             <span class="method-tool">Segment Analysis</span>

@@ -45,11 +45,11 @@ GA4 segmentation strategy, Hotjar heatmap framework, Convert.com test setup, sta
 
 1. **Mobile-first means interaction-first.** Browser chrome creates invisible friction that standard analytics won't surface: session recording is non-negotiable on luxury Shopify mobile.
 2. **Luxury buyers need permission to trust.** In MENA markets, the biggest CRO wins happen before the checkout step, not inside it.
-3. **Traffic source segmentation is the most underused lever on Shopify.** A minimal UTM-targeted trust layer for cold paid traffic is the highest-ROI intervention in this roadmap.
+3. **Traffic source segmentation is the most underused lever on Shopify.** A minimal UTM-targeted trust layer for cold paid traffic carries the highest projected lift in this roadmap.
 
 ## View the Case Study
 
-[**→ Live Case Study**](https://larrozeemma-btz.github.io/aesop-cro-case)
+[**→ Live Case Study**](https://larrozeemma-btz.github.io/aesop-cro-research-case/)
 
 ---
 
